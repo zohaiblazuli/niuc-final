@@ -1,0 +1,116 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pcc-niuc-guard"
+version = "0.1.0"
+description = "Guardrails and utilities for NIUC data processing pipelines."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "NIUC Team", email = "engineering@niuc.example.com"}
+]
+keywords = ["niuc", "guard", "data-quality", "monitoring"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://example.com/pcc-niuc-guard"
+"Repository" = "https://example.com/pcc-niuc-guard/repo"
+"Documentation" = "https://example.com/pcc-niuc-guard/docs"
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.4.0",
+  "ruff>=0.4.4",
+  "isort>=5.13.2",
+  "mypy>=1.10.0",
+  "pytest>=8.2.0",
+  "pytest-cov>=4.1.0",
+  "pytest-benchmark>=4.0.0",
+  "pre-commit>=3.7.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pccniuc"]
+
+[tool.hatch.envs.default]
+dependencies = [
+  "black>=24.4.0",
+  "ruff>=0.4.4",
+  "isort>=5.13.2",
+  "mypy>=1.10.0",
+  "pytest>=8.2.0",
+  "pytest-cov>=4.1.0",
+  "pytest-benchmark>=4.0.0",
+  "pre-commit>=3.7.0"
+]
+
+[tool.hatch.envs.default.scripts]
+fmt = [
+  "isort src tests",
+  "black src tests"
+]
+lint = [
+  "ruff check src tests",
+  "black --check --diff src tests",
+  "isort --check-only src tests"
+]
+typecheck = "mypy src"
+test = "pytest"
+bench = "pytest --benchmark-only"
+
+dev = [
+  "pre-commit install",
+  "pytest"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+include = "src|tests"
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "N",
+  "UP",
+  "B",
+  "RUF"
+]
+ignore = ["E501"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.isort]
+profile = "black"
+known_first_party = ["pccniuc"]
+line_length = 88
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["pccniuc"]
+

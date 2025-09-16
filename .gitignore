@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+.eggs/
+*.egg-info/
+.installed.cfg
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+env/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+pytest.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# pyproject build tool caches
+.hatch/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+.dmypy/
+
+# Ruff
+.ruff_cache/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# dotenv
+.env.local
+.envrc
+
+# Benchmarks
+bench/.benchmarks/
+
+# Coverage reports
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Temporary
+.tmp/
+.temp/
+
