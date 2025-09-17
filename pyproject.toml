@@ -21,7 +21,9 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent"
 ]
-dependencies = []
+dependencies = [
+  "pydantic>=2.6.0,<3.0.0"
+]
 
 [project.scripts]
 pccniuc = "pccniuc.cli:main"
