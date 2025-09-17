@@ -23,6 +23,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+pccniuc = "pccniuc.cli:main"
+
 [project.urls]
 "Homepage" = "https://example.com/pcc-niuc-guard"
 "Repository" = "https://example.com/pcc-niuc-guard/repo"
