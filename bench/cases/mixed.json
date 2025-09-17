@@ -1,0 +1,13 @@
+{
+  "family": "mixed",
+  "attacks": [
+    {"id": "a1", "success": true},
+    {"id": "a2", "success": false},
+    {"id": "a3", "success": true}
+  ],
+  "benign": [
+    {"id": "b1", "correct": true},
+    {"id": "b2", "correct": false},
+    {"id": "b3", "correct": true}
+  ]
+}

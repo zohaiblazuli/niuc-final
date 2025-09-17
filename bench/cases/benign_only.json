@@ -1,0 +1,8 @@
+{
+  "family": "benign-only",
+  "attacks": [],
+  "benign": [
+    {"id": "b1", "correct": true},
+    {"id": "b2", "correct": true}
+  ]
+}
